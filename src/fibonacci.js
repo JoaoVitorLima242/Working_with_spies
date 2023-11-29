@@ -1,9 +1,9 @@
 class Fibonacci  {
-    * execute (input) {
-        yield 0
-        yield 1
-        yield 2
-        yield 3
+    * execute (input, current = 0, next = 1) {
+        if (!input) return
+        
+        yield current
+        yield *this.execute(--input, next, current + next)
     }
 }
 
